@@ -17,7 +17,7 @@ mvn clean install
 
 ### Prerequisites
 
-- Any IDE, preferably Idea intellij ( community edition )
+- Any IDE, preferably [intellij Idea ( community edition )](https://www.jetbrains.com/idea/)
 - JDK
 
 ### Contents
