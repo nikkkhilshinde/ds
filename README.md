@@ -24,9 +24,11 @@ mvn clean install
 
 - Algorithm 
     - Sorting 
-        - [Quick-Sort] (../blob/master/src/main/java/Algorithm/sorting/QuickSort.java)
+        - [Quick-Sort](../blob/master/src/main/java/Algorithm/sorting/QuickSort.java)
+- Data-Structures 
+    - Tree
+        - [Trie-tree](../blob/master/src/main/java/Tree/Trie/Main.java)
 
-[Quick-Sort] (../blob/master/src/main/java/Algorithm/sorting/QuickSort.java)
 ## Contributing
 
 Please feel free to contribute
