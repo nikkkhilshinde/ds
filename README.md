@@ -20,6 +20,12 @@ mvn clean install
 - Any IDE, preferably Idea intellij ( community edition )
 - JDK
 
+### Contents
+
+- Algorithm 
+    - Sorting 
+        - [Quick-Sort] (src/main/java/Algorithm/sorting/QuickSort.java)
+
 ## Contributing
 
 Please feel free to contribute
