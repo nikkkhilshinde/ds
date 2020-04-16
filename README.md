@@ -29,6 +29,7 @@ mvn clean install
 - Data-Structures 
     - Tree
         - [Trie-tree](../master/src/main/java/Tree/Trie/Main.java)
+        - [Binary-search-tree](../master/src/main/java/Tree/BinarySearchTree/Main.java)
 
 ## Contributing
 
