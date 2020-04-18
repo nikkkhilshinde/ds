@@ -26,6 +26,13 @@ mvn clean install
     - Sorting 
         - [Quick-Sort](../master/src/main/java/Algorithm/sorting/QuickSort.java)
         - [Merge-Sort](../master/src/main/java/Algorithm/sorting/MergeSort.java)
+    
+    - Tree traversal 
+        - [DFS](../master/src/main/java/Tree/BinarySearchTree/Main.java)
+        - [In-order](../master/src/main/java/Tree/BinarySearchTree/Main.java)
+        - [Pre-order](../master/src/main/java/Tree/BinarySearchTree/Main.java)
+        - [Post-order](../master/src/main/java/Tree/BinarySearchTree/Main.java)
+     
 - Data-Structures 
     - Tree
         - [Trie-tree](../master/src/main/java/Tree/Trie/Main.java)

@@ -2,19 +2,19 @@ package Algorithm.sorting;
 
 import java.util.Arrays;
 
+
 public class QuickSort {
     private final static int SIZE = 100;
     private static int[] array = new int[SIZE];
 
     public static void main(String[] args) {
 
-//        int[] numbers = new int[SIZE];
         for (int i=0;i<SIZE;i++){
             array[i] = (int)(Math.random() * SIZE) + 1;
         }
 
         quickSort(0, 99);
-        Arrays.stream(array).forEach(number -> System.out.print(number + "|"));
+        Arrays.stream(array).forEach(number -> System.out.println(number + "|"));
     }
 
     public static void quickSort(int start, int end) {

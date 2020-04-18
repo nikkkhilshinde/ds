@@ -4,14 +4,15 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Scanner;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * The Main class is a to demonstrate how trienode works
  * It allows user to add and retrieve data from node
  */
+
 public class Main {
     public static void main(String[] args) {
         //trainTree();
@@ -94,9 +95,8 @@ public class Main {
      * @return          object of rootNode i.e TrieNode
      */
     static TrieNode retrieveRootNodeFromFile(){
-        try {
-            FileInputStream fileInputStream = new FileInputStream("rootNode.trie");
-            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+        try(FileInputStream fileInputStream = new FileInputStream("rootNode.trie");
+            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);) {
             TrieNode trieNode = (TrieNode) objectInputStream.readObject();
             objectInputStream.close();
             System.out.println("Object read successfully");
@@ -124,9 +124,9 @@ public class Main {
      *                  else false
      */
     static boolean persistNodeInFile(TrieNode trieNode){
-        try {
-            FileOutputStream fileOutputStream = new FileOutputStream("rootNode.trie");
-            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+        try(FileOutputStream fileOutputStream = new FileOutputStream("rootNode.trie");
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);) {
+            
             objectOutputStream.writeObject(trieNode);
             objectOutputStream.close();
             System.out.println("Object written into file successfully.");

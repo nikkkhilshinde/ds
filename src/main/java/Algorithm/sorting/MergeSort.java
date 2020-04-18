@@ -2,8 +2,9 @@ package Algorithm.sorting;
 
 import java.util.Arrays;
 
+
 public class MergeSort {
-    private final static int SIZE = 100;
+    private static final int SIZE = 100;
     private static int[] array = new int[SIZE];
 
     public static void main(String[] args) {
@@ -13,7 +14,7 @@ public class MergeSort {
         }
 
         mergeSort(0,SIZE-1);
-        Arrays.stream(array).forEach(number -> System.out.print(number + "|"));
+        Arrays.stream(array).forEach(number -> System.out.println(number + "|"));
     }
 
 
