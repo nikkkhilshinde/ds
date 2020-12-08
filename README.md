@@ -36,6 +36,8 @@ mvn clean install
     - Tree
         - [Trie-tree](../master/src/main/java/Tree/Trie/Main.java)
         - [Binary-search-tree](../master/src/main/java/Tree/BinarySearchTree/Main.java)
+    - Linked List
+        - [Reverse-linked list](../master/src/main/java/LinkedList/ReverseLinkedList.java)
 
 ## Contributing
 
