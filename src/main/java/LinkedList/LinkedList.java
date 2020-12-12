@@ -1,16 +1,17 @@
 package LinkedList;
 
-public class ReverseLinkedList {
+public class LinkedList {
     public static void main(String[] args) {
         Node head = new Node();
         Node temp = head;
         //Init linked list
-        for (int i = 1; i < 10; i++) {
+        for (int i = 1; i < 11; i++) {
             head.setData(i);
             Node t = new Node();
             head.setNextNode(t);
             head = t;
         }
+        findMiddleElement(temp);
         Node headOfInvertedLinkedList = invert(temp);
         traverseLinkedList(headOfInvertedLinkedList);
     }
@@ -26,7 +27,19 @@ public class ReverseLinkedList {
         }
         return previous;
     }
-
+    public static void findMiddleElement(Node head){
+        Node mid = head;
+        int count = 0;
+        while (head!=null){
+            if(count==2){
+                mid = mid.getNextNode();
+                count = 0;
+            }
+            head = head.getNextNode();
+            count++;
+        }
+        System.out.println(mid.getData());
+    }
     public static void traverseLinkedList(Node head) {
         while (head != null) {
             System.out.println(head.getData());

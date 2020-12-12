@@ -38,6 +38,7 @@ mvn clean install
         - [Binary-search-tree](../master/src/main/java/Tree/BinarySearchTree/Main.java)
     - Linked List
         - [Reverse-linked list](../master/src/main/java/LinkedList/ReverseLinkedList.java)
+        - [Find-Mid](../master/src/main/java/LinkedList/ReverseLinkedList.java)
 
 ## Contributing
 
