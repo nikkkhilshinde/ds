@@ -9,37 +9,39 @@ public class QuickSort {
 
     public static void main(String[] args) {
 
-        for (int i=0;i<SIZE;i++){
-            array[i] = (int)(Math.random() * SIZE) + 1;
+        for (int i = 0; i < SIZE; i++) {
+            array[i] = (int) (Math.random() * SIZE) + 1;
         }
 
-        quickSort(0, 99);
+        quickSort(array, 0, 99);
         Arrays.stream(array).forEach(number -> System.out.println(number + "|"));
     }
 
-    public static void quickSort(int start, int end) {
-        if (start >= end) {
-            return;
+    static void quickSort(int arr[], int low, int high) {
+        if (low < high) {
+            int partition = partition(arr, low, high);
+
+            quickSort(arr, low, partition - 1);
+            quickSort(arr, partition + 1, high);
         }
+    }
 
+    static int partition(int arr[], int low, int high) {
+        int pivot = arr[high];
 
-        int pivot = array[end];
+        int i = low - 1;
 
-        int count = start;
-
-        for (int i = start; i <= end; i++) {
-
-            if (array[i] <= pivot) {
-                int temp = array[i];
-                array[i] = array[count];
-                array[count] = temp;
-
-                count++;
+        for (int j = low; j <= high; j++) {
+            if (arr[j] < pivot) {
+                i++;
+                int temp = arr[j];
+                arr[j] = arr[i];
+                arr[i] = temp;
             }
         }
-
-
-        quickSort(start, count - 2);
-        quickSort(count, end);
+        int temp = arr[i + 1];
+        arr[i + 1] = arr[high];
+        arr[high] = temp;
+        return i + 1;
     }
 }

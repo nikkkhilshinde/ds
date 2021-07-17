@@ -3,12 +3,47 @@ package Tree.BinarySearchTree;
 
 import org.apache.log4j.BasicConfigurator;
 
-import java.util.Scanner;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 
 public class Main {
-    static int SIZE = 10;
+    static void db(){
+        Scanner scanner = new Scanner(System.in);
+        List<String> names = new ArrayList<>();
 
+        int n = Integer.parseInt(scanner.nextLine());
+        for (int i = 0; i < n; i++) {
+            String[] input = scanner.nextLine().split(" ");
+            String name = input[0];
+            String email = input[1];
+            Pattern pattern = Pattern.compile("[a-z]*@gmail.com");
+            Matcher matcher = pattern.matcher(email);
+            if(matcher.matches()){
+                names.add(name);
+            }
+        }
+        names.stream().sorted().collect(Collectors.toList()).forEach(System.out::println);
+    }
+    static int SIZE = 10;
+    static void levelOrder(Node root){
+        //Write your code here
+        Queue<Node> queue = new LinkedList<>();
+        if(root == null) return;
+        queue.add(root);
+        while(!queue.isEmpty()){
+            Node front = queue.remove();
+            System.out.println(front.data);
+            if(front.left!=null){
+                queue.add(front.left);
+            }
+            if(front.right!=null){
+                queue.add(front.right);
+            }
+        }
+    }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         BasicConfigurator.configure();
@@ -17,8 +52,9 @@ public class Main {
          * Randomly generate numbers
          * and call the method
          */
-        for (int i = 1; i < SIZE; i++) {
-            int temp = (int) (Math.random() * SIZE) + 1;
+        for (int i = SIZE; i >= 0; i--) {
+//            int temp = (int) (Math.random() * SIZE) + 1;
+            int temp = i;
             insertNode(rootNode, temp);
         }
         int input ;
@@ -30,6 +66,7 @@ public class Main {
             System.out.println("4.DFS traversal");
             System.out.println("0.Exit");
             System.out.println("=====================");
+            System.out.println(isBST);
 
             input = scanner.nextInt();
             switch (input){
@@ -71,12 +108,24 @@ public class Main {
         }
     }
 
+    static Stack<Integer> traversedNodes = new Stack<>();
+    static boolean isBST = true;
     private static void traverseInOrder(Node currentNode) {
 
         if (currentNode.left != null) {
             traverseInOrder(currentNode.left);
         }
         System.out.println(currentNode.data);
+        if(!traversedNodes.empty()){
+            if(traversedNodes.peek() == currentNode.data){
+                isBST = false;
+            }
+            if(traversedNodes.peek() < currentNode.data){
+                traversedNodes.push(currentNode.data);
+            }else{
+                isBST = false;
+            }
+        }
         if (currentNode.right != null) {
             traverseInOrder(currentNode.right);
         }
